@@ -1,0 +1,9 @@
+.contributors-list {
+    overflow: auto;
+    margin: 15px;
+    .mat-table {
+        .mat-header-cell {
+            width: calc(100% / 8);
+        }
+    }
+}

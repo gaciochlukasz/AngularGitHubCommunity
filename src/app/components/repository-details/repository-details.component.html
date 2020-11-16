@@ -1,0 +1,11 @@
+<mat-card class="details-page">
+    <mat-card-header>
+      <mat-card-title class="details-page_header">Repository details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="details-page_content">
+            <scl-repository-details-panel class="details-page_content_info-card" [repoDetails]="repoDetails"></scl-repository-details-panel>
+            <scl-assignable-users-list class="details-page_content_repo-list" [repoNameOwner]="{repoName: repoName, repoOwner: ownerName}"></scl-assignable-users-list>
+        </div>
+    </mat-card-content>
+  </mat-card>

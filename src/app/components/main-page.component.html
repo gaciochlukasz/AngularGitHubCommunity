@@ -1,0 +1,15 @@
+<div class="top-nav">
+  <span class="top-nav_title">Angular GitHub Community</span>
+  <div class="top-nav_actions">
+    <button mat-raised-button class="top-nav_actions_button main-page-button" (click)="goToMainPage()">
+        <mat-icon>keyboard_backspace</mat-icon>
+      <span>Main page</span>
+    </button>
+    <button mat-raised-button class="top-nav_actions_button contributors-list-button" (click)="goToContributorsList()">
+      <mat-icon>list</mat-icon>
+      <span>Contributors list</span>
+    </button>
+  </div>
+</div>
+<scl-loader *ngIf="showLoader"></scl-loader>
+<router-outlet></router-outlet>

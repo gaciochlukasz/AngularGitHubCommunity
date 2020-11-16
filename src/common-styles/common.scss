@@ -1,0 +1,66 @@
+// snack-bar
+
+.success-snackbar-info {
+    background-color: #78ca79;
+}
+
+.error-snackbar-info {
+    background-color: #e25959;
+}
+
+// table 
+.mat-table {
+    width: 100%;
+    th.mat-header-cell,
+    td.mat-cell {
+        padding-left: 5px;
+        padding-right: 5px;
+        @media (max-width: 420px) {
+            font-size: 11px;
+        }
+    }
+
+    tr.mat-row {
+        height: 60px;
+
+        &:hover {
+            background-color: rgba(#3f51b5, 0.3);
+            cursor: pointer;
+        }
+    }
+
+    &_avatars {
+        @media (max-width: 680px) {
+            display: none;
+        }
+    }
+
+    &_avatar {
+        width: 50px;
+        border-radius: 50%;
+    }
+}
+
+// details-page
+.details-page {
+    margin: 15px;
+    
+    &_content {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      padding: 25px;
+    
+      &_info-card {
+        max-width: 400px;
+        width: 100%;
+        padding: 0 10px;
+      }
+    
+      &_repo-list {
+        max-width: 700px;
+        width: 100%;
+        padding: 0 10px;
+      }
+    }
+  }

@@ -1,0 +1,21 @@
+<mat-card *ngIf="userInfo">
+  <mat-card-header>
+    <img mat-card-avatar [src]="userInfo.avatarUrl" alt="avatar" />
+    <mat-card-title>{{ userInfo.name }}</mat-card-title>
+    <mat-card-subtitle>GitHub login {{ userInfo.login }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p *ngIf="userInfo.email"><b>Email:</b> {{ userInfo.email }}</p>
+    <p *ngIf="userInfo.bio"><b>Bio:</b> {{ userInfo.bio }}</p>
+    <p *ngIf="userInfo.location"><b>Location:</b> {{ userInfo.location }}</p>
+    <p *ngIf="userInfo.websiteUrl"><b>Website:</b> <a [href]="userInfo.websiteUrl" target="_blank">{{ userInfo.websiteUrl }}</a></p>
+    <p *ngIf="userInfo.url"><b>Github url:</b> <a [href]="userInfo.url" target="_blank"> Github profile</a></p>
+    <p *ngIf="userInfo.projectsUrl"><b>Projects url:</b> <a [href]="userInfo.projectsUrl" target="_blank"> Projects</a></p>
+    <p *ngIf="userInfo.repositories.totalCount"><b>Repositories:</b> {{ userInfo.repositories.totalCount }}</p>
+    <p *ngIf="userInfo.repositoriesContributedTo.totalCount"><b>Repositories contribute:</b> {{ userInfo.repositoriesContributedTo.totalCount }}</p>
+    <p *ngIf="userInfo.gists.totalCount"><b>Gists:</b> {{ userInfo.gists.totalCount }}</p>
+    <p *ngIf="userInfo.twitterUsername"><b>Twitter username:</b> {{ userInfo.twitterUsername }}</p>
+    <p *ngIf="userInfo.followers.totalCount"><b>Twitter followers:</b> {{ userInfo.followers.totalCount }}</p>
+    <p *ngIf="userInfo.following.totalCount"><b>Twitter following:</b> {{ userInfo.following.totalCount }}</p>
+  </mat-card-content>
+</mat-card>

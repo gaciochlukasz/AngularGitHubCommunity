@@ -1,0 +1,11 @@
+<mat-card class="details-page">
+    <mat-card-header>
+      <mat-card-title class="details-page_header">User details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="details-page_content">
+            <scl-user-info-card class="details-page_content_info-card" [userInfo]="userInfo"></scl-user-info-card>
+            <scl-user-repositories-list class="details-page_content_repo-list" [userLogin]="userLogin"></scl-user-repositories-list>
+        </div>
+    </mat-card-content>
+  </mat-card>

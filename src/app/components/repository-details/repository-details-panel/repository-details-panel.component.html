@@ -1,0 +1,17 @@
+<mat-card *ngIf="repoDetails">
+    <mat-card-header>
+      <img mat-card-avatar [src]="repoDetails.owner.avatarUrl" alt="avatar" />
+      <mat-card-title>Repository: {{ repoDetails.name }}</mat-card-title>
+      <mat-card-subtitle>Owner: {{ repoDetails.owner.login }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngIf="repoDetails.createdAt"><b>Created:</b> {{ repoDetails.createdAt | date : 'MM/dd/yyyy' }}</p>
+      <p *ngIf="repoDetails.description"><b>Description:</b> {{ repoDetails.description }}</p>
+      <p *ngIf="repoDetails.homepageUrl"><b>Website:</b> <a [href]="repoDetails.homepageUrl" target="_blank"> {{ repoDetails.homepageUrl }}</a></p>
+      <p *ngIf="repoDetails.url"><b>Github url:</b> <a [href]="repoDetails.url" target="_blank"> Github profile</a></p>
+      <p *ngIf="repoDetails.projectsUrl"><b>Projects url:</b> <a [href]="repoDetails.projectsUrl" target="_blank"> Projects</a></p>
+      <p *ngIf="repoDetails.sshUrl"><b>SSH:</b> {{ repoDetails.sshUrl }}</p>
+      <p *ngIf="repoDetails.diskUsage"><b>Disk usage:</b> {{ repoDetails.diskUsage | kbToMb }}</p>
+    </mat-card-content>
+  </mat-card>
+  

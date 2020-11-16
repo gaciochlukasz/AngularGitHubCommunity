@@ -1,0 +1,76 @@
+<mat-card class="contributors-list">
+  <mat-card-header>
+    <mat-card-title class="contributors-list_header">Contributors list</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="members" matSort>
+      <ng-container matColumnDef="avatar">
+        <th class="mat-table_avatars" mat-header-cell *matHeaderCellDef>
+          Avatar
+        </th>
+        <td class="mat-table_avatars" mat-cell *matCellDef="let element">
+          <img class="mat-table_avatar" alt=".img" [src]="element.avatarUrl" />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="login">
+        <th mat-header-cell *matHeaderCellDef>GitHub Nick</th>
+        <td mat-cell *matCellDef="let element">{{ element.login | noData }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name | noData }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="contributionsCollection">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Contributors commits
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{
+            element.contributionsCollection.totalCommitContributions | noData
+          }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="repositories">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Repositories number
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.repositories.totalCount | noData }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="gists">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Gists number</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.gists.totalCount | noData }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="followers">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Followers number
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.followers.totalCount | noData }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        [ngClass]="'contributors-list-row-' + i"
+        mat-row
+        *matRowDef="let row; columns: displayedColumns; let i = index"
+        (click)="goToContributorDetails(row.login)"
+      ></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data</td>
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+  </mat-card-content>
+</mat-card>
